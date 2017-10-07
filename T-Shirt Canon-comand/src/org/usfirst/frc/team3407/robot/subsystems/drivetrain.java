@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 //import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+//import org.usfirst.frc.team3407.robot.OI;
 import org.usfirst.frc.team3407.robot.commands.*;;
 
 /**
@@ -28,12 +29,10 @@ public class drivetrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     	setDefaultCommand(new drive());
     }
-    public void ArcadeDrive (Joystick stick){
-    	drive.drive(stick.getRawAxis(3), stick.getX());
+    public void tankDrive(Joystick stick){
+    	drive.tankDrive(-(stick.getRawAxis(1)), -(stick.getRawAxis(5)));
     }
-    public void ReverseDrive (double reverse, Joystick stick){
-    	drive.drive(reverse, stick.getX());
-    }
+    
     public void stop(){
     	drive.drive(0, 0);
     }

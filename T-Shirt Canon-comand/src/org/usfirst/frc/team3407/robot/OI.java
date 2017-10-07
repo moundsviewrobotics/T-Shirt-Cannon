@@ -12,11 +12,13 @@ import org.usfirst.frc.team3407.robot.commands.*;
  */
 public class OI {
 	static OI instance;
-	Joystick stick = new Joystick(1);
+	Joystick stick = new Joystick(0);
 	Button buttona = new JoystickButton(stick, 1),
 			buttonb = new JoystickButton(stick,2),
 			buttonx = new JoystickButton(stick,3),
-			buttony = new JoystickButton(stick,4);
+			buttony = new JoystickButton(stick,4),
+			buttonOff = new JoystickButton(stick,7),
+			buttonOn = new JoystickButton(stick,8);
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
@@ -51,6 +53,8 @@ public class OI {
 		buttona.whenPressed(new shoot());
 		buttonx.whenPressed(new shootx());
 		buttony.whenPressed(new shooty());
+		buttonOff.whenPressed(new compressorOff());
+		buttonOn.whenPressed(new compressorOn());
 	}
 	
 	public Joystick getJoystick() {

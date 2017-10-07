@@ -1,18 +1,18 @@
 package org.usfirst.frc.team3407.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team3407.robot.*;
+import org.usfirst.frc.team3407.robot.Robot;
 
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class drive extends Command {
+public class compressorOn extends Command {
 
-    public drive() {
+    public compressorOn() {
+    	requires(Robot.Pneumatics);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -21,8 +21,7 @@ public class drive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.tankDrive(OI.getInstance().getJoystick());
-    	//Robot.drivetrain.ReverseDrive(OI.getInstance().getJoystick());
+    	Robot.Pneumatics.comOn();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,12 +31,12 @@ public class drive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.drivetrain.stop();
+    	Robot.Pneumatics.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
+    	Robot.Pneumatics.stop();
     }
 }
