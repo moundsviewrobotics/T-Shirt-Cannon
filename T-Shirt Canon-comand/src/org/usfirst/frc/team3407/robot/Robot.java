@@ -2,10 +2,9 @@
 package org.usfirst.frc.team3407.robot;
 
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.TimedRobot;
 //import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3407.robot.subsystems.*;
 
@@ -19,12 +18,13 @@ import org.usfirst.frc.team3407.robot.subsystems.*;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot {
 
-	public static drivetrain drivetrain = new drivetrain();
-	public static Pneumatics Pneumatics = new Pneumatics();
-	public static Compressor c = new Compressor();
-	public static boolean compressor = true;
+	public static final drivetrain drivetrain = new drivetrain();
+	public static final Pneumatics Pneumatics = new Pneumatics();
+	public static final Compressor c = new Compressor();
+	
+	
 
    
 
@@ -94,6 +94,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
-        LiveWindow.run();
+    
     }
 }
