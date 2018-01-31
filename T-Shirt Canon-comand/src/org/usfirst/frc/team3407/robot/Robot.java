@@ -24,10 +24,6 @@ public class Robot extends TimedRobot {
 	public static final Pneumatics Pneumatics = new Pneumatics();
 	public static final Compressor c = new Compressor();
 	
-	
-
-   
-
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.

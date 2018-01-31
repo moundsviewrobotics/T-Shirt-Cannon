@@ -1,10 +1,11 @@
 package org.usfirst.frc.team3407.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Victor;
 //import edu.wpi.first.wpilibj.SpeedController;
 //import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 //import org.usfirst.frc.team3407.robot.OI;
 import org.usfirst.frc.team3407.robot.commands.*;;
@@ -16,12 +17,11 @@ public class drivetrain extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	private RobotDrive drive;
+	private DifferentialDrive drive;
 	public drivetrain() {
-		drive = new RobotDrive(0, 1);
+		drive = new DifferentialDrive(new Victor(0), new Victor(1));
 		drive.setMaxOutput(0.5);
 		drive.setSafetyEnabled(true);
-		drive.setSensitivity(0.75);
 	}
 
     public void initDefaultCommand() {
@@ -34,7 +34,7 @@ public class drivetrain extends Subsystem {
     }
     
     public void stop(){
-    	drive.drive(0, 0);
+    	drive.tankDrive(0, 0);
     }
 }
 
