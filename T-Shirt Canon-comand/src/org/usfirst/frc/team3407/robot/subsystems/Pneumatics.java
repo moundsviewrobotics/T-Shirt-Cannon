@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3407.robot.subsystems;
 
+import org.usfirst.frc.team3407.robot.Robot;
+
 //import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Timer;
@@ -18,6 +20,14 @@ public  class Pneumatics extends Subsystem {
     // here. Call these from Commands.
 	public void initDefaultCommand(){
 		//leave blank
+	}
+	
+	public void comOff(){
+		Robot.c.setClosedLoopControl(false);
+	}
+	
+	public void comOn(){
+		Robot.c.setClosedLoopControl(true);
 	}
     
     public void shoota() {
