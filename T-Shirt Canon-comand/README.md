@@ -4,7 +4,7 @@
 
 This project contains the code for an FRC command based robot control program.
 
-**Version 1.1**
+**Version 1.2**
 
 ### Features ###
 
